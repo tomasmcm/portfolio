@@ -1,0 +1,64 @@
+/*
+File: ie.css
+Author: Mark Southard
+
+Applies to IE8.
+*/
+
+html,
+body { overflow-x: visible; }
+
+body {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#wrapper { width: 965px; }
+
+#content-wrapper { 
+	overflow: hidden; 
+	width: 700px;
+}
+
+.projects-feed { width: 735px; }
+
+.projects-feed article[data-six-column="0"],
+.projects-feed article[data-three-column="0"] { clear: both; }
+
+.is_single #content > .project { padding-bottom: 51px; }
+
+.project-assets { margin-bottom: 45px; }
+
+.project header,
+.project .project-description { margin-left: 0; }
+
+.project .project-assets,
+.project header,
+.project .project-description { float: none; }
+
+.project .project-meta { 
+	margin-left: 0;
+	margin-top: 47px;
+	width: 100%; 
+	text-align: left;
+	top: 0;
+}
+
+.project-meta > div { 
+	margin-bottom: 3px;
+	margin-top: 0; 
+}
+
+.project-meta > div:first-child { top: 0; }
+
+.project-meta span,
+.project-meta div > a {
+	display: inline;
+	margin-top: 0;
+}
+
+.project-meta a { display: inline; }
+
+.project-meta span.sep { display: inline; }
+
+.footer-text { max-width: 455px; }

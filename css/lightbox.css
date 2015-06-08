@@ -1,0 +1,140 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline
+}
+body{
+	line-height:1;
+	color:black;
+	background:white
+}
+table{
+	border-collapse:separate;
+	border-spacing:0
+}
+caption,th,td{
+	text-align:left;
+	font-weight:normal
+}
+blockquote:before,blockquote:after,q:before,q:after{
+	content:""
+}
+blockquote,q{
+	quotes:"" ""
+}
+header,section,footer,aside,nav,article,figure{
+	display:block
+}
+label,input[type=button],input[type=submit],button{
+	cursor:pointer
+}
+button{
+	width:auto;
+	overflow:visible
+}
+img{
+	-ms-interpolation-mode:bicubic
+}
+ul,ol{
+	list-style:none
+}
+body{
+	background:#333
+}
+.nav{
+	list-style:none;
+	margin:0;
+	padding:0;
+	position:absolute;
+	left:0;
+	top:0;
+	padding:15px 15px 0 15px;
+	width:100%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box
+}
+.nav li{
+	display:inline
+}
+.nav li a{
+	display:block;
+	float:left;
+	background:#000 url(/lightbox-icons.png) no-repeat;
+	text-decoration:none;
+	text-indent:-9999px;
+	height:28px;
+	width:28px;
+	border-radius:3px;
+	margin:0 5px 0 0;
+	opacity:0.8}
+.nav li a:hover{
+	opacity:1
+}
+.nav #prev{
+	background-position:0 0
+}
+.nav #next{
+	background-position:-28px 0
+}
+.nav li a.back{
+	float:right;
+	margin-right:0;
+	background-position:100% 0
+}
+body.zoomed .nav{
+	display:none
+}
+.wrap{
+	margin-top:43px
+}
+body.zoomed .wrap{
+	margin-top:0
+}
+.image-frame{
+	text-align:center
+}
+img{
+	/*height:auto;*/
+	max-width:96%;
+	max-height:96%;
+	width:auto;
+	vertical-align:bottom;
+	width:auto;
+	display:none;
+	border:15px solid #333;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box
+}
+img.active{
+	display:inline
+}
+img:hover{
+	cursor:pointer;
+	cursor:-webkit-zoom-in;
+	cursor:-moz-zoom-in;
+	cursor:zoom-in
+}
+body.zoomed img{
+	margin-top:0 !important;
+	max-width:none
+}
+body.zoomed img:hover{
+	cursor:pointer;
+	cursor:-webkit-zoom-out;
+	cursor:-moz-zoom-out;
+	cursor:zoom-out
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){
+	.nav li a{
+		background-image:url(/lightbox-icons_@2x.png);
+		background-size:84px 28px
+	}
+}

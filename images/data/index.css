@@ -1,0 +1,53 @@
+	::-webkit-media-controls {
+  display:none !important;
+}
+video::-webkit-media-controls {
+  display:none !important;
+}
+video::-webkit-media-controls-enclosure {
+  display:none !important;
+}
+*{
+	cursor:url("cursor.png"), auto;
+	cursor:url("cursor.png"), text;}
+body{
+	font-family: sans-serif;
+	font-weight: 600;
+	background-color: #f2f2f2;
+width:700px;}
+#t{font-size: 45px;}
+#n{font-size: 20px;}
+#playlist {
+	/*margin: auto;*/
+	margin-top: 0px;
+	width:700px;
+display: inherit;}
+video {
+	margin-top: 0px;
+	/*display: block;*/
+	position: relative;
+	z-index: 3;
+	background-color: #f2f2f2 !important;
+	width:700px !important;
+	height:467px !important;
+}
+a {
+	display: block;
+	background-color: #fafafa;
+	color: #8DBF42;
+	border: solid 1px #8DBF42;
+	border-radius: 10px;
+	text-align: center;
+	text-decoration: none;
+	padding: 5px;
+	width: 80px;
+	margin: auto;
+	margin-top: 20px;
+	font-size: 12px;}
+a:hover{background-color: #E6E6E6;}
+/*.anim {
+	margin-top: -500px;
+	position: absolute;
+	z-index: 2;
+	background-color: #f2f2f2 !important;}
+}*/
