@@ -47,8 +47,6 @@ body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: no
 /* Main Styles
 /*=================================*/
 
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic);
-
 body {
 	overflow-x: hidden;
 	overflow: hidden;
