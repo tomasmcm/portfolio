@@ -156,6 +156,7 @@ p { margin-bottom: 20px; }
 
 img {
 	height: auto;
+	width:100%;
 	max-width: 100%;
 	vertical-align: bottom;
 }
@@ -167,6 +168,12 @@ img {
 	float:left;
 	padding-right: 0.5%;
 	padding-bottom: 0.5%;
+}
+
+.desc-split{
+	clear:both;
+	padding-top:20px;
+	text-align:center;
 }
 
 hr {
@@ -345,7 +352,7 @@ div.video {
 	text-align: center;
 }
 
-div.imagesplit{
+div.imagesplit + div.imagesplit{
 	margin-bottom: 20px;
 	text-align: center;
 }
@@ -1002,12 +1009,13 @@ nav a + a{
 	}
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio : 2),
-only screen and (min--moz-device-pixel-ratio : 2),
-only screen and (-o-min-device-pixel-ratio : 2/1),
-only screen and (min-device-pixel-ratio : 2),
-only screen and (min-resolution : 192dpi),
-only screen and (min-resolution : 2dppx) {
+@media
+only screen and (-webkit-min-device-pixel-ratio : 2) and (max-width : 1024px),
+only screen and (min--moz-device-pixel-ratio : 2) and (max-width : 1024px),
+only screen and (-o-min-device-pixel-ratio : 2/1) and (max-width : 1024px),
+only screen and (min-device-pixel-ratio : 2) and (max-width : 1024px),
+only screen and (min-resolution : 192dpi) and (max-width : 1024px),
+only screen and (min-resolution : 2dppx) and (max-width : 1024px){
 	/*===== Retina and HiDPI images =====*/
 
 	.project-assets img {
