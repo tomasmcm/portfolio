@@ -380,11 +380,18 @@ div.imagesplit + div.imagesplit{
 .project-meta { margin-top: 0px; }
 
 .project-meta h4 {
-	color: #E14419;
+	color: #D6C3A6;
 	font-size: 12px;
 	font-weight: normal;
 	margin: 10px 0 0;
 	text-transform: uppercase;
+}
+
+.lang{
+	color:#D6C3A6;
+	font-size:12px;
+	text-transform:uppercase;
+	margin-bottom:0px;
 }
 
 .project-meta > div { margin-bottom: 5px; }
@@ -636,6 +643,34 @@ nav a + a{
 	color: #22252E;
 }
 
+.to{
+	box-sizing: border-box;
+	font-size: 2.5em;
+	background: #D6C3A6;
+	color: #E14419;
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	position: fixed;
+	z-index: 2;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px;
+	font-weight: bold;
+	opacity: 0.4;
+	cursor: pointer;
+	right: 20px;
+	bottom: -50px;
+}
+
+.to:hover{
+	opacity: 1;
+}
+
+#menu{
+	line-height: 37px;
+}
+
 /*=================================*/
 /* Structure
 /*=================================*/
@@ -703,6 +738,15 @@ nav a + a{
 
 .project-description{
 	width: 350px;
+}
+
+.project-description a{
+	color: #E14419;
+}
+
+.project-description a:hover,
+.project-description a:focus{
+	color: #22252E;
 }
 
 .project header,

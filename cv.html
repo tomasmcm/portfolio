@@ -243,22 +243,22 @@
 	<h1 class="title">Curriculum Vitæ</h1>
 </header>
 
-<div class="project-description"><p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">ENG</p>
+<div class="project-description"><p class="lang">ENG</p>
 <p>The aim of this project is to build an interactive online curriculum. The inspiration for this website was the operating system Macintosh OS 6 (the most popular OS from 1 to 7). This OS dates from 1988 and was one of the first systems that had features that today we can't live without such as multitasking, shortcuts, desktop. I decided to make a tribute to these mythical OS using icons and graphics from the system itself.<br>
 The website is divided into 3 main sections (About, Skills & Hobbies) plus the main screen and the contacts. The section About contains information on my training and education. The section Skills presents in the form of graphs the various programs and programming languages that know. Finally, the section Hobbies lists some hobbies and personal likes.<br /> 
 Online version: <a href="http://tomasmcm.github.io/cv" target="_blank">CV</a><br /></p>
-<p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">PT</p>
+<p class="lang">PT</p>
 <p>A proposta para este projecto consiste na construção de um currículo online interactivo. A fonte de inspiração para este website foi o sistema operativo Macintosh OS 6 (o mais popular dos OS 1 a 7). Este OS data de 1988 e foi um dos primeiros sistemas que que possuía funcionalidades que actualmente consideramos o default como multitasking, atalhos, desktop. Decidi fazer uma homenagem a esses míticos OS utilizando ícones e gráficos do próprio sistema.<br>
 O site está dividido em 3 secções principais (About, Skills e Hobbies) às quais acresce o ecrã principal e os contactos. A secção about contem informações sobre a minha formação e educação. A secção skills apresenta sob a forma de gráficos os vários programas e linguagens de programação que domino. Finalmente, a secção hobbies apresenta alguns passatempos e gostos pessoais.<br />
 Vers&atilde;o Online: <a href="http://tomasmcm.github.io/cv" target="_blank">CV</a><br /></p>
 
 	<p><br /></p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Subject</p>
-	<p style="margin-top:-20px;">Internet Technologies | Tecnologias da Internet</p>
+	<p class="lang">Subject</p>
+	<pclass="lang">Internet Technologies | Tecnologias da Internet</p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Programs</p>
-	<p style="margin-top:-20px;"><img src="img/html.png" title="HTML+CSS" alt="HTML+CSS" style="height:40px;width:auto;"><img src="9455413519_javascript.png" title="Javascript" alt="Javascript" style="width:40px;height:40px;" /><img src="9455413595_a644a140a3_o.png" title="Adobe Illustrator" alt="Adobe Illustrator" style="width:40px;height:40px;"></p>
+	<p class="lang">Programs</p>
+	<pclass="lang"><img src="img/html.png" title="HTML+CSS" alt="HTML+CSS" style="height:40px;width:auto;"><img src="9455413519_javascript.png" title="Javascript" alt="Javascript" style="width:40px;height:40px;" /><img src="9455413595_a644a140a3_o.png" title="Adobe Illustrator" alt="Adobe Illustrator" style="width:40px;height:40px;"></p>
 	</div>
 	<footer class="project-meta">
 		<div><h4>Date</h4> <span class="date">October || December 2014</span></div>
@@ -1229,19 +1229,64 @@ Vers&atilde;o Online: <a href="http://tomasmcm.github.io/cv" target="_blank">CV<
   <!--END #wrapper-->
   </div>
 
+<div id="top" class="to">∧</div>
+<div id="menu" class="to">≡</div>
+
 <!-- jQuery Plugin -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <!-- Preloader -->
 <script type="text/javascript">
 //<![CDATA[
 $(window).load(function() { // makes sure the whole site is loaded
-$('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
-$('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
-$('body').css({'overflow':'visible'});
-window.scrollTo(0,0);
-})
+  $('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
+  $('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
+  $('body').css({'overflow':'visible'});
+  window.scrollTo(0,0);
+});
 //]]>
+
+$(document).ready(function() {
+  if(($(window).width() <= 1035) && ($('body').hasClass("is_project"))){
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '80px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+        if($(this).scrollTop() < $('.projects-feed').first().offset().top-48){
+          $('#menu').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#menu').stop().animate({ bottom: '-100px'}, 500);
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+
+    $('#menu').click(function() {
+      $('#menu').stop().animate({ bottom: '-100px'}, 500);
+      $('html, body').stop().animate({ scrollTop: $('.projects-feed').first().offset().top-50 }, 500);
+    });
+
+  }else{
+
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+  }
+});
+
 </script>
 
 <script>

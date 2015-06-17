@@ -241,20 +241,20 @@
 	<h1 class="title">1ne Minute, Please.</h1>
 </header>
 
-<div class="project-description"><p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">ENG</p>
+<div class="project-description"><p class="lang">ENG</p>
 <p>In this project I had to produce a presentation of the resume and portfolio on video with a maximum duration of one minute. The aim is to summarise the most important points in a video with just one minute.<br>
 The video was made with computer screen recordings, the narration was ordered on Fiverr and the pos-production was made in After Effects.<br /></p>
-<p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">PT</p>
+<p class="lang">PT</p>
 <p>Neste projecto foi necessário produzir uma apresentação do currículo e portfolio em vídeo com duração máxima de 1 minuto. O objectivo é conseguir sintetizar os pontos mais importantes num vídeo de apenas um minuto.<br>
 O vídeo foi realizado com gravações do ecrã do computador, a narração foi encomendada através do site Fiverr e a montagem foi realizada no After Effects.<br /></p>
 
 	<p><br /></p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Subject</p>
-	<p style="margin-top:-20px;">Project Management | Gestão de Projetos</p>
+	<p class="lang">Subject</p>
+	<pclass="lang">Project Management | Gestão de Projetos</p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Programs</p>
-	<p style="margin-top:-20px;">
+	<p class="lang">Programs</p>
+	<pclass="lang">
 <img src="9458479102_Ae.png" title="Adobe AfterEffects" alt="Adobe AfterEffects" style="width:40px;height:39px;">
 	</p>
 	</div>
@@ -1227,19 +1227,64 @@ O vídeo foi realizado com gravações do ecrã do computador, a narração foi 
   <!--END #wrapper-->
   </div>
 
+<div id="top" class="to">∧</div>
+<div id="menu" class="to">≡</div>
+
 <!-- jQuery Plugin -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <!-- Preloader -->
 <script type="text/javascript">
 //<![CDATA[
 $(window).load(function() { // makes sure the whole site is loaded
-$('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
-$('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
-$('body').css({'overflow':'visible'});
-window.scrollTo(0,0);
-})
+  $('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
+  $('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
+  $('body').css({'overflow':'visible'});
+  window.scrollTo(0,0);
+});
 //]]>
+
+$(document).ready(function() {
+  if(($(window).width() <= 1035) && ($('body').hasClass("is_project"))){
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '80px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+        if($(this).scrollTop() < $('.projects-feed').first().offset().top-48){
+          $('#menu').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#menu').stop().animate({ bottom: '-100px'}, 500);
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+
+    $('#menu').click(function() {
+      $('#menu').stop().animate({ bottom: '-100px'}, 500);
+      $('html, body').stop().animate({ scrollTop: $('.projects-feed').first().offset().top-50 }, 500);
+    });
+
+  }else{
+
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+  }
+});
+
 </script>
 
 <script>

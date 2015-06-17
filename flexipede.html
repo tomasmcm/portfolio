@@ -221,19 +221,19 @@
 	<h1 class="title">A Video Experiment <br/>(Flexipede Inside Out)</h1>
 </header>
 
-<div class="project-description"><p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">ENG</p>
+<div class="project-description"><p class="lang">ENG</p>
 <p>The created application consists on a graphic exploration in Porcessing. This program is based on the premise of what would be the inside of a Flexipede, and what are the graphic capabilities of the Processing language.
 <br />The program is to be viewed as a video (like the original animation), however, as it was created in Processing the final result will differ every time it is viewed.</p>
-<p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">PT</p>
+<p class="lang">PT</p>
 <p>A aplicação desenvolvida consiste numa exploração gráfica em Processing. O que se pretendeu investigar foi o que seria o interior do Fexipede, assim como as capacidades gráficas do programa e da linguagem Processing. A aplicação pretende ser um video (como a animação original), no entanto por ser criado no Processing este video apresentará resultados diferentes cada vez que é visionado.<br /></p>
 
 	<p><br /></p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Subject</p>
-	<p style="margin-top:-20px;">Computer Graphics | Computação Gráfica</p>
+	<p class="lang">Subject</p>
+	<pclass="lang">Computer Graphics | Computação Gráfica</p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Programs</p>
-	<p style="margin-top:-20px;"><img src="9458479102_1d107417ef_o.png" title="Processing" alt="Processing" style="width:40px;height:40px;"/></p></div>
+	<p class="lang">Programs</p>
+	<pclass="lang"><img src="9458479102_1d107417ef_o.png" title="Processing" alt="Processing" style="width:40px;height:40px;"/></p></div>
 	<footer class="project-meta">
 		<div><h4>Date</h4> <span class="date">June 2014</span></div>
 		<div><h4>Tags</h4> <span class="tags"><a href="processing.html">Processing</a></span></div>
@@ -1201,19 +1201,64 @@
   <!--END #wrapper-->
   </div>
 
+<div id="top" class="to">∧</div>
+<div id="menu" class="to">≡</div>
+
 <!-- jQuery Plugin -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <!-- Preloader -->
 <script type="text/javascript">
 //<![CDATA[
 $(window).load(function() { // makes sure the whole site is loaded
-$('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
-$('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
-$('body').css({'overflow':'visible'});
-window.scrollTo(0,0);
-})
+  $('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
+  $('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
+  $('body').css({'overflow':'visible'});
+  window.scrollTo(0,0);
+});
 //]]>
+
+$(document).ready(function() {
+  if(($(window).width() <= 1035) && ($('body').hasClass("is_project"))){
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '80px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+        if($(this).scrollTop() < $('.projects-feed').first().offset().top-48){
+          $('#menu').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#menu').stop().animate({ bottom: '-100px'}, 500);
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+
+    $('#menu').click(function() {
+      $('#menu').stop().animate({ bottom: '-100px'}, 500);
+      $('html, body').stop().animate({ scrollTop: $('.projects-feed').first().offset().top-50 }, 500);
+    });
+
+  }else{
+
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+  }
+});
+
 </script>
 
 <script>

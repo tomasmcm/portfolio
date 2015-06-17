@@ -281,20 +281,20 @@
 	<h1 class="title">CCDM ID</h1>
 </header>
 
-<div class="project-description"><p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">ENG</p>
+<div class="project-description"><p class="lang">ENG</p>
 <p>On this project we were asked to create a concept for the visual image of the annual event "Ciclo de Conversas de Design+Multimedia" associated with the courses of degree and master of Design and Multimedia of the University of Coimbra.<br />
 The concept I created in partnership with a colleague was the chat as means of communication for the modern youth associated with the computer terminal look.<br /></p>
-<p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">PT</p>
+<p class="lang">PT</p>
 <p>O objectivo desta proposta consistiu na cria&ccedil;&atilde;o de um conceito para a imagem visual do evento anual no &acirc;mbito dos cursos de Licenciatura e Mestrado em Design e Multim&eacute;dia da Universidade de Coimbra: “Ciclo de Conversas Design+Multim&eacute;dia”.<br />
 O conceito que escolhi em conjunto com uma colega foi o Chat que &eacute; um meio privilegiado de comunica&ccedil;&atilde;o actual associado ao aspecto visual dos terminais dos computadores<br /></p>
 
 	<p><br /></p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Subject</p>
-	<p style="margin-top:-20px;">Design I</p>
+	<p class="lang">Subject</p>
+	<pclass="lang">Design I</p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Programs</p>
-	<p style="margin-top:-20px;"><img src="9458479102_blinky.png" title="Blinky" alt="Blinky" style="width:40px;height:40px;" /><img src="9455413595_a644a140a3_o.png" title="Adobe Illustrator" alt="Adobe Illustrator" style="width:40px;height:40px;" /><img src="9455413519_c2609787ed_o.png" title="Adobe Photoshop" alt="Adobe Photoshop" style="width:40px;height:40px;"></p></div>
+	<p class="lang">Programs</p>
+	<pclass="lang"><img src="9458479102_blinky.png" title="Blinky" alt="Blinky" style="width:40px;height:40px;" /><img src="9455413595_a644a140a3_o.png" title="Adobe Illustrator" alt="Adobe Illustrator" style="width:40px;height:40px;" /><img src="9455413519_c2609787ed_o.png" title="Adobe Photoshop" alt="Adobe Photoshop" style="width:40px;height:40px;"></p></div>
 	<footer class="project-meta">
 		<div><h4>Date</h4> <span class="date">November || December 2013</span></div>
 		<div><h4>Tags</h4> <a href="blinky.html">Blinky</a><span class="sep">, </span><span class="tags"><a href="adobe-illustrator.html">Adobe Illustrator</a></span><span class="sep">, </span><a href="adobe-photoshop.html">Adobe Photoshop</a></div>
@@ -1262,19 +1262,64 @@ O conceito que escolhi em conjunto com uma colega foi o Chat que &eacute; um mei
   <!--END #wrapper-->
   </div>
 
+<div id="top" class="to">∧</div>
+<div id="menu" class="to">≡</div>
+
 <!-- jQuery Plugin -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <!-- Preloader -->
 <script type="text/javascript">
 //<![CDATA[
 $(window).load(function() { // makes sure the whole site is loaded
-$('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
-$('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
-$('body').css({'overflow':'visible'});
-window.scrollTo(0,0);
-})
+  $('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
+  $('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
+  $('body').css({'overflow':'visible'});
+  window.scrollTo(0,0);
+});
 //]]>
+
+$(document).ready(function() {
+  if(($(window).width() <= 1035) && ($('body').hasClass("is_project"))){
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '80px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+        if($(this).scrollTop() < $('.projects-feed').first().offset().top-48){
+          $('#menu').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#menu').stop().animate({ bottom: '-100px'}, 500);
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+
+    $('#menu').click(function() {
+      $('#menu').stop().animate({ bottom: '-100px'}, 500);
+      $('html, body').stop().animate({ scrollTop: $('.projects-feed').first().offset().top-50 }, 500);
+    });
+
+  }else{
+
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+  }
+});
+
 </script>
 
 <script>

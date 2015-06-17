@@ -261,18 +261,18 @@
 	<h1 class="title">SMTUC - Press</h1>
 </header>
 
-<div class="project-description"><p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">ENG</p>
+<div class="project-description"><p class="lang">ENG</p>
 <p>This campaign aims to promote the use of SMTUC public transport as an alternative to car. In this campaign, people have the possibility to build a network of answers / opinions, thus appealing to the consideration of the citizens. A website was created with the aim to gather responses from all participants, these responses were then used to create the various typographic patterns later applied on Coimbra's buses spreading these messages on our city.<br />The campaign is founded in typography, with references to movable type, the press and printing materials. Regarding the color scheme we decided to use the CMYK model (cyan, magenta, yellow and black) in order to make a bridge between the movable type (first method of mass printing) and current printing (offset or laser / inkjet using the overlapping CMYK colors).</p>
-<p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">PT</p>
+<p class="lang">PT</p>
 <p>Esta campanha visa promover a utilização dos transportes públicos SMTUC como alternativa ao carro. Nesta campanha, as pessoas tem a possibilidade de construir uma rede de respostas / opiniões, apelando assim a uma reflexão dos cidadãos. Foi criado um site com o objectivo de reunir as respostas de todos os participantes, estas respostas foram posteriormente utilizadas para criar os vários padrões tipográficos para os autocarros de Coimbra espalhando estas mensagens pela nossa cidade.<br />A campanha alicerça-se na tipografia, com referências aos tipos móveis, à prensa e aos materiais de impressão. Em relação ao esquema cromático decidimos recorrer ao modelo de cor CMYK (ciano, magenta, amarelo e preto) no sentido de fazer uma ponte entre os tipos móveis (primeiro método de impressão em massa) e a impressão actual (em offset ou laser/inkjet utilizando as cores CMYK sobrepostas).<br /></p>
 
 	<p><br /></p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Subject</p>
-	<p style="margin-top:-20px;">Design II | Design II</p>
+	<p class="lang">Subject</p>
+	<pclass="lang">Design II | Design II</p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Programs</p>
-	<p style="margin-top:-20px;">
+	<p class="lang">Programs</p>
+	<pclass="lang">
 	<img src="9455413595_a644a140a3_o.png" title="Adobe Illustrator" alt="Adobe Illustrator" style="width:40px;height:40px;">
 	<img src="9455413531_1b7594fb69_o.png" title="Adobe Indesign" alt="Adobe Indesign" style="width:40px;height:40px;"/>
 	<img src="9455413519_c2609787ed_o.png" title="Adobe Photoshop" alt="Adobe Photoshop" style="width:40px;height:40px;"/>
@@ -1247,19 +1247,64 @@
   <!--END #wrapper-->
   </div>
 
+<div id="top" class="to">∧</div>
+<div id="menu" class="to">≡</div>
+
 <!-- jQuery Plugin -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <!-- Preloader -->
 <script type="text/javascript">
 //<![CDATA[
 $(window).load(function() { // makes sure the whole site is loaded
-$('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
-$('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
-$('body').css({'overflow':'visible'});
-window.scrollTo(0,0);
-})
+  $('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
+  $('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
+  $('body').css({'overflow':'visible'});
+  window.scrollTo(0,0);
+});
 //]]>
+
+$(document).ready(function() {
+  if(($(window).width() <= 1035) && ($('body').hasClass("is_project"))){
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '80px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+        if($(this).scrollTop() < $('.projects-feed').first().offset().top-48){
+          $('#menu').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#menu').stop().animate({ bottom: '-100px'}, 500);
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+
+    $('#menu').click(function() {
+      $('#menu').stop().animate({ bottom: '-100px'}, 500);
+      $('html, body').stop().animate({ scrollTop: $('.projects-feed').first().offset().top-50 }, 500);
+    });
+
+  }else{
+
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+  }
+});
+
 </script>
 
 <script>

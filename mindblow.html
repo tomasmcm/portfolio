@@ -418,7 +418,13 @@
 			</a>
 			<p class="asset-description">"Burning Wood" Page</p>
 		</div>
-		
+
+		<div id="asset-1168" class="video">
+			<video width="700" height="560" controls autoplay>
+			  <source src="https://github.com/tomasmcm/mindblow/blob/gh-pages/files/pub.mp4?raw=true" type="video/mp4">
+			</video>
+			<p class="asset-description">Publicity</p>
+		</div>
 		
 </div>
 
@@ -426,7 +432,7 @@
 	<h1 class="title">Operating Manual to MINDBLOW</h1>
 </header>
 
-<div class="project-description"><p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">ENG</p>
+<div class="project-description"><p class="lang">ENG</p>
 <p>The purpose of this project is to create the second issue of "Operating Manual to MINDBLOW".
 This issue of the magazine is designed to be read on the kiosks' screens; these screens have the resolution of 1280x1024px and have a 1-point resistive touch screen.<br>
 The starting point of this publication is the seminal work "The Whole Earth Catalogue" by Stewart Brand and the Target Audience is all the creative community of the Department of Computer Science of UC.<br>
@@ -434,7 +440,7 @@ The magazine features 15 articles developed from existing editions (TWEC)1969, (
 Each of the 6 articles has an illustration which were later animated.<br>
 The interface with the magazine is carried out through a device that has a 8x8 array of illuminated buttons programmed with Arduino; this interface (inspired by Monome project) aims to attract people passing by and enables a more intuitive and direct navigation with the magazine.<br />
 Online version: <a href="http://tomasmcm.github.io/mindblow" target="_blank">MINDBLOW</a><br /></p>
-<p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">PT</p>
+<p class="lang">PT</p>
 <p>Este projeto consiste na criação do segundo número da revista “Operating Manual to MINDBLOW”.
 Esta edição da revista foi desenhada para ser lida nos ecrãs dos kiosks do Departamento de Engenharia Informática; estes ecrãs possuem o formato de 1280x1024px e são dotados da funcionalidade de toque resistivo de 1 ponto.<br>
 O Ponto de partida desta publicação é a obra seminal “The Whole Earth Catalogue” de Stewart Brand e o Publico alvo é toda a comunidade criativa do DEI. <br>
@@ -445,11 +451,11 @@ Versão online: <a href="http://tomasmcm.github.io/mindblow" target="_blank">MIN
 
 	<p><br /></p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Subject</p>
-	<p style="margin-top:-20px;">Design III</p>
+	<p class="lang">Subject</p>
+	<pclass="lang">Design III</p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Programs</p>
-	<p style="margin-top:-20px;">
+	<p class="lang">Programs</p>
+	<pclass="lang">
 <img src="img/html.png" title="HTML+CSS" alt="HTML+CSS" style="height:40px;width:auto;">
 <img src="9455413519_javascript.png" title="Javascript" alt="Javascript" style="width:40px;height:40px;" />
 <img src="9455413565_46c04c9a64_o.png" title="Adobe Ideas" alt="Adobe Ideas" style="width:40px;height:40px;">
@@ -1429,19 +1435,64 @@ Versão online: <a href="http://tomasmcm.github.io/mindblow" target="_blank">MIN
   <!--END #wrapper-->
   </div>
 
+<div id="top" class="to">∧</div>
+<div id="menu" class="to">≡</div>
+
 <!-- jQuery Plugin -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <!-- Preloader -->
 <script type="text/javascript">
 //<![CDATA[
 $(window).load(function() { // makes sure the whole site is loaded
-$('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
-$('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
-$('body').css({'overflow':'visible'});
-window.scrollTo(0,0);
-})
+  $('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
+  $('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
+  $('body').css({'overflow':'visible'});
+  window.scrollTo(0,0);
+});
 //]]>
+
+$(document).ready(function() {
+  if(($(window).width() <= 1035) && ($('body').hasClass("is_project"))){
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '80px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+        if($(this).scrollTop() < $('.projects-feed').first().offset().top-48){
+          $('#menu').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#menu').stop().animate({ bottom: '-100px'}, 500);
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+
+    $('#menu').click(function() {
+      $('#menu').stop().animate({ bottom: '-100px'}, 500);
+      $('html, body').stop().animate({ scrollTop: $('.projects-feed').first().offset().top-50 }, 500);
+    });
+
+  }else{
+
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+  }
+});
+
 </script>
 
 <script>

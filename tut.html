@@ -267,22 +267,22 @@
 	<h1 class="title">TUT tv</h1>
 </header>
 
-<div class="project-description"><p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">ENG</p>
+<div class="project-description"><p class="lang">ENG</p>
 <p>The name of the my channel is “TUT tv”. The TUT word can work alone or as an acronym meaning “Teaching You T...”. For example, Teaching You this, Teaching You things, Teaching You that, Teaching You tons, Teaching You trigonometry, Teaching You technology, Teaching You trade, or Teaching You turkish. The possibilities are endless.<br>
 The TUT tv is a on demand channel of tutorials. The aim of the channel is to promote self-learning and the DIY movement. It is organised in categories: Maths and Sciences, Technology and Electronics, Cooking, Magic, and Arts (Photography, Music).<br>
 The word TUT is the abbreviation of “tutorial”. The word is surrounded by an hexagon, a six sided polygon; this shape is related to efficiency, community (beehives), and also it is symmetrical in all its axis.<br /></p>
-<p style="color:#E14419;font-size:12px;text-transform:uppercase;margin-bottom:0px;">PT</p>
+<p class="lang">PT</p>
 <p>O nome do meu canal é "TUT tv". A palavra TUT funciona isoladamente e como um acrónimo “Teaching You T...”. Por exemplo, Teaching You this, Teaching You things, Teaching You that, Teaching You tons, Teaching You trigonometry, Teaching You technology, Teaching You trade, or Teaching You turkish. As possibilidades são infinitas.<br>
 A TUT tv é um canal on demand de tutoriais. O objectivo do canal é promover a auto-aprendizagem e o movimento Faça você mesmo (DIY). O canal está organizado em categorias: Matemática e Ciências, Tecnologia e Electrónica, Culinária, Magia, e Artes (Fotografia, Música).<br>
 A palavra TUT é a abreviatura de "tutorial". A palavra está emoldurada por um hexágono, um poligono de 6 lados; esta forma geométrica está relacionada com eficiência, comunidade (colmeias) e é simétrica em todos os seus eixos.<br /></p>
 
 	<p><br /></p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Subject</p>
-	<p style="margin-top:-20px;">Multimedia Communication | <br>Comunicação Multimédia</p>
+	<p class="lang">Subject</p>
+	<pclass="lang">Multimedia Communication | <br>Comunicação Multimédia</p>
 
-	<p style="color:#E14419;font-size:12px;text-transform:uppercase;">Programs</p>
-	<p style="margin-top:-20px;">
+	<p class="lang">Programs</p>
+	<pclass="lang">
 <img src="9458479102_Ae.png" title="Adobe AfterEffects" alt="Adobe AfterEffects" style="width:40px;height:39px;">
 <img src="9455413595_a644a140a3_o.png" title="Adobe Illustrator" alt="Adobe Illustrator" style="width:40px;height:40px;">
 	</p>
@@ -1257,19 +1257,64 @@ A palavra TUT é a abreviatura de "tutorial". A palavra está emoldurada por um 
   <!--END #wrapper-->
   </div>
 
+<div id="top" class="to">∧</div>
+<div id="menu" class="to">≡</div>
+
 <!-- jQuery Plugin -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <!-- Preloader -->
 <script type="text/javascript">
 //<![CDATA[
 $(window).load(function() { // makes sure the whole site is loaded
-$('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
-$('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
-$('body').css({'overflow':'visible'});
-window.scrollTo(0,0);
-})
+  $('#status').delay(50).fadeOut('slow'); // will first fade out the loading animation
+  $('#preloader').delay(50).fadeOut('slow'); // will fade out the white DIV that covers the website.
+  $('body').css({'overflow':'visible'});
+  window.scrollTo(0,0);
+});
 //]]>
+
+$(document).ready(function() {
+  if(($(window).width() <= 1035) && ($('body').hasClass("is_project"))){
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '80px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+        if($(this).scrollTop() < $('.projects-feed').first().offset().top-48){
+          $('#menu').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#menu').stop().animate({ bottom: '-100px'}, 500);
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+
+    $('#menu').click(function() {
+      $('#menu').stop().animate({ bottom: '-100px'}, 500);
+      $('html, body').stop().animate({ scrollTop: $('.projects-feed').first().offset().top-50 }, 500);
+    });
+
+  }else{
+
+    $(window).scroll(function() {
+        if($(this).scrollTop() > $(window).height()){
+          $('#top').stop().animate({ bottom: '20px'}, 500);
+        }else{
+          $('#top').stop().animate({ bottom: '-50px'}, 500);
+        }
+      });
+    $('#top').click(function() {
+      $('#top').stop().animate({ bottom: '-50px'}, 200);
+      $('html, body').stop().animate({ scrollTop: 0}, 500);
+    });
+  }
+});
+
 </script>
 
 <script>
