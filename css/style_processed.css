@@ -200,9 +200,9 @@ hr {
 }
 
 .title {
-	color: #696969;
+	color: #22252E;
 	font-size: 2em;
-	font-weight: 400;
+	font-weight: 600;
 	margin-bottom: 20px;
 }
 
@@ -380,7 +380,7 @@ div.imagesplit + div.imagesplit{
 .project-meta { margin-top: 0px; }
 
 .project-meta h4 {
-	color: #D6C3A6;
+	color: #696969;
 	font-size: 12px;
 	font-weight: normal;
 	margin: 10px 0 0;
@@ -388,7 +388,7 @@ div.imagesplit + div.imagesplit{
 }
 
 .lang{
-	color:#D6C3A6;
+	color:#696969;
 	font-size:12px;
 	text-transform:uppercase;
 	margin-bottom:0px;
@@ -647,7 +647,7 @@ nav a + a{
 	box-sizing: border-box;
 	font-size: 2.5em;
 	background: #D6C3A6;
-	color: #E14419;
+	color: #22252E;
 	width: 40px;
 	height: 40px;
 	border-radius: 5px;
