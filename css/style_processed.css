@@ -139,17 +139,17 @@ a:focus {
 	text-decoration: none;
 }
 
-h1 { font-size: 24px; }
+h1 { font-size: 1.714em; }
 
-h2 { font-size: 20px; }
+h2 { font-size: 1.429em; }
 
-h3 { font-size: 16px; }
+h3 { font-size: 1.143em; }
 
-h4 { font-size: 14px; }
+h4 { font-size: 1.000em; }
 
-h5 { font-size: 12px; }
+h5 { font-size: 0.857em; }
 
-h6 { font-size: 10px; }
+h6 { font-size: 0.714em; }
 
 p { margin-bottom: 20px; }
 
@@ -185,7 +185,7 @@ hr {
 
 /*===== Titles =====*/
 .site-title {
-	font-size: 22px;
+	font-size: 1.571em;
 	font-weight: 700;
 	margin-bottom: 26px;
 }
@@ -202,13 +202,17 @@ hr {
 .title {
 	color: #22252E;
 	font-size: 2em;
-	font-weight: 600;
+	font-weight: 400;
 	margin-bottom: 20px;
+}
+
+.project-assets ~ header .title {
+	font-weight: 600;
 }
 
 .projects-feed .title {
 	color: #22252E;
-	font-size: 14px;
+	font-size: 1.000em;
 	margin-bottom: 2px;
 	margin-top: 20px;
 }
@@ -317,7 +321,7 @@ img.grayscale {
 
 .projects-feed .tags a {
 	color: #E14419;
-	font-size: 12px;
+	font-size: 0.857em;
 }
 
 .projects-feed .tags a:hover,
@@ -359,7 +363,7 @@ div.imagesplit + div.imagesplit{
 
 .asset-description {
 	color: #E14419;
-	font-size: 14px;
+	font-size: 1.000em;
 	margin: 20px 18px 30px;
 }
 
@@ -381,7 +385,7 @@ div.imagesplit + div.imagesplit{
 
 .project-meta h4 {
 	color: #696969;
-	font-size: 12px;
+	font-size: 0.857em;
 	font-weight: normal;
 	margin: 10px 0 0;
 	text-transform: uppercase;
@@ -389,7 +393,7 @@ div.imagesplit + div.imagesplit{
 
 .lang{
 	color:#696969;
-	font-size:12px;
+	font-size:0.857em;
 	text-transform:uppercase;
 	margin-bottom:0px;
 }
@@ -399,7 +403,7 @@ div.imagesplit + div.imagesplit{
 .project-meta span,
 .project-meta a {
 	color: #22252E;
-	font-size: 14px;
+	font-size: 1.000em;
 }
 
 .project-meta a:hover,
@@ -542,10 +546,10 @@ form label{
 
 
 .about #content{
-	width:600px;
-	font-size: 1.4em;
+	width:540px;
+	font-size: 1.2em;
 	margin-top:-30px;
-	margin-left:50px;
+	/*margin-left:50px;*/
 }
 .about ul{
 	list-style-type: none;
@@ -554,6 +558,10 @@ form label{
 .about li:before{
 	content:"// ";
 	color: #D6C3A6;
+}
+
+.contact p{
+	margin-bottom: 0px;
 }
 
 
@@ -589,7 +597,7 @@ nav .current-tag a {
 .nav-title a:focus,
 .nav-title a:visited {
 	color: #E14419;
-	font-size: 12px;
+	font-size: 0.857em;
 	font-weight: 500;
 	margin: 30px 0 10px;
 	text-transform: uppercase;
@@ -606,7 +614,7 @@ nav a + a{
 	width:400px;
 	float:right;
 	margin-right:180px;
-	font-size: 12px;
+	font-size: 0.857em;
 	margin-top:100px;
 	margin-bottom: 50px;
 }
@@ -626,7 +634,7 @@ nav a + a{
 /* Footer Styles
 /*=================================*/
 #footer {
-	font-size: 12px;
+	font-size: 0.857em;
 }
 
 .footer-text {
@@ -646,8 +654,8 @@ nav a + a{
 .to{
 	box-sizing: border-box;
 	font-size: 2.5em;
-	background: #D6C3A6;
-	color: #22252E;
+	background: #696969;
+	color: #E6E6E6;
 	width: 40px;
 	height: 40px;
 	border-radius: 5px;
@@ -657,7 +665,7 @@ nav a + a{
 	vertical-align: middle;
 	line-height: 30px;
 	font-weight: bold;
-	opacity: 0.4;
+	opacity: 0.2;
 	cursor: pointer;
 	right: 20px;
 	bottom: -50px;
@@ -911,7 +919,7 @@ nav a + a{
 /*@media screen and (max-width : 1035px) {*/
 @media screen and (max-width : 1035px){
 	/*===== 700px breakpoint =====*/
-	#wrapper { width: 720px; }
+	#wrapper { width: 770px; }
 
 	#content-wrapper {
 		width: 770px;
@@ -961,7 +969,7 @@ nav a + a{
 		position:absolute;
 		margin-top: 300px;
 	  left: 50%;
-	  margin-left: -150px;
+	  margin-left: -165px;
 	}
 }
 
@@ -998,8 +1006,6 @@ nav a + a{
 	.project-assets {
 		width: 540px;
 	}
-
-	nav ul li { width: 455px; }
 
 	.footer-text {
 		float: none;
@@ -1073,9 +1079,16 @@ only screen and (min-device-pixel-ratio : 2) and (max-width : 1024px),
 only screen and (min-resolution : 192dpi) and (max-width : 1024px),
 only screen and (min-resolution : 2dppx) and (max-width : 1024px){
 	/*===== Retina and HiDPI images =====*/
+	body{
+		font-size: 16px;
+	}
 
 	.project-assets img {
 		max-width: 90%;
+	}
+
+	#preloader{
+		margin-left: -5%;
 	}
 
 	.project-assets iframe {
@@ -1119,9 +1132,9 @@ only screen and (min-resolution : 2dppx) and (max-width : 600px){
   	margin-left: 2%;
   }
 
-  nav[role=navigation]{
+  /*nav[role=navigation]{
   	padding-left: 20%;
-  }
+  }*/
 
   #header {
 		float: none;
