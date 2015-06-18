@@ -208,6 +208,23 @@ hr {
 
 .project-assets ~ header .title {
 	font-weight: 600;
+	margin-bottom: 0px;
+}
+
+.project-assets ~ header{
+	margin-bottom: 20px;
+}
+
+.project-assets ~ header a{
+	color: #E14419;
+	font-weight: bold;
+	margin-top: -50px;
+	margin-bottom: 200px;
+}
+
+.project-assets ~ header a:hover,
+.project-assets ~ header a:focus{
+	color: #22252E;
 }
 
 .projects-feed .title {
@@ -578,17 +595,18 @@ nav {
 
 nav a,
 nav a:visited {
-	color: #E14419;
 	font-size:1.2em;
 	margin-top: 50px;
+	color: #E14419;
 	/*text-transform: uppercase;*/
 }
 
 nav a:hover,
 nav a:focus,
-nav .current-page a,
-nav .current-project a,
-nav .current-tag a {
+nav #current-page,
+nav .current-page,
+nav .current-project,
+nav .current-tag{
 	color: #22252E;
 }
 
