@@ -763,7 +763,7 @@ nav a + a{
 }
 
 .project-description{
-	width: 350px;
+	width: 380px;
 }
 
 .project-description a{
@@ -900,7 +900,7 @@ nav a + a{
 	}
 
 	.imagesplit{
-		margin-left: 187px;
+		margin-left: 295px;
 	}
 
 	img {
@@ -970,7 +970,7 @@ nav a + a{
 	}
 
 	.imagesplit{
-		margin-left: 40px;
+		margin-left: 68px;
 	}
 
 	#footer {
@@ -1013,6 +1013,10 @@ nav a + a{
 		width: 540px;
 	}
 
+	.is_single #content > .project{
+		margin-left: -5%;
+	}
+
 	.imagesplit{
 		margin-left: 0px;
 	}
@@ -1023,6 +1027,7 @@ nav a + a{
 
 	.project-assets {
 		width: 540px;
+		margin-left: 0px;
 	}
 
 	.footer-text {
@@ -1077,6 +1082,11 @@ nav a + a{
 	#footer,
 	.list-tags {
 		margin-left:50px;
+	}
+
+	.is_single #content > .project{
+		margin-left: 0%;
+		max-width: 90vw;
 	}
 
 
